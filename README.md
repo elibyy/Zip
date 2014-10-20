@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/elibyy/Zip.svg?branch=master)](https://travis-ci.org/elibyy/Zip)
 
 #Elibyy Zip
-A Object-Orianted PHP library to manipulate archives
+A Object-Oriented PHP library to manipulate archives
 
 ##Adapters
 
