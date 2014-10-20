@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Elibyy\Adapters\ZipAdapter | API</title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../Elibyy/Adapters.html">Elibyy\Adapters</a>\ZipAdapter</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>ZipAdapter</strong>        implements
+        <a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a></p>
+
+            <div class="description">
+            <p>Class ZipAdapter this class is an adapter for zip files</p>
+            <p>
+</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;bool
+                </td>
+                <td class="last">
+                    <a href="#method_supports">supports</a>(string $type)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Elibyy/General/File.html"><abbr title="Elibyy\General\File">File</abbr></a>[]
+                </td>
+                <td class="last">
+                    <a href="#method_getFiles">getFiles</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    int
+                </td>
+                <td class="last">
+                    <a href="#method_getFilesCount">getFilesCount</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    object
+                </td>
+                <td class="last">
+                    <a href="#method_getArchive">getArchive</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_unzip">unzip</a>(string $destination = null, string|array $entries = null)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getFilename">getFilename</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string|bool
+                </td>
+                <td class="last">
+                    <a href="#method_getComment">getComment</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a>|bool
+                </td>
+                <td class="last">
+                    <a href="#method_setComment">setComment</a>(string $comment)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="Elibyy\General\$this">$this</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_updateArchive">updateArchive</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    void
+                </td>
+                <td class="last">
+                    <a href="#method_open">open</a>(string $file, int $flags = \ZipArchive::CREATE)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_addFolder">addFolder</a>(string $path, string $parent = &#039;&#039;)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_addFile">addFile</a>(string $path, string $localName = null, int $start, null $length = null, bool $noUpdate = false)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_removeFileByObject">removeFileByObject</a>(<a href="../../Elibyy/General/File.html"><abbr title="Elibyy\General\File">File</abbr></a> $file)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_removeFileByName">removeFileByName</a>(string $name)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_addGlob">addGlob</a>(string $glob, int $flags = GLOB_BRACE, array $options = array())
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_addPattern">addPattern</a>(string $pattern, string $directory, array $options = array())
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_compress">compress</a>(string $format)
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 48</div>
+        <code>            public            
+    <strong>__construct</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_supports">
+        <div class="location">at line 59</div>
+        <code>        static    public            bool
+    <strong>supports</strong>(string $type)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$type</td>
+                <td>the file type</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>is the type supported</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getFiles">
+        <div class="location">at line 67</div>
+        <code>            public            <a href="../../Elibyy/General/File.html"><abbr title="Elibyy\General\File">File</abbr></a>[]
+    <strong>getFiles</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Elibyy/General/File.html"><abbr title="Elibyy\General\File">File</abbr></a>[]</td>
+            <td>the array of the files in the archive</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getFilesCount">
+        <div class="location">at line 82</div>
+        <code>            public            int
+    <strong>getFilesCount</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>int</td>
+            <td>the number of files in the archive</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getArchive">
+        <div class="location">at line 90</div>
+        <code>            public            object
+    <strong>getArchive</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>object</td>
+            <td>the archive object instance depend on the adapter</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_unzip">
+        <div class="location">at line 98</div>
+        <code>            public            bool
+    <strong>unzip</strong>(string $destination = null, string|array $entries = null)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$destination</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>string|array</td>
+                <td>$entries</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>was it success ?</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getFilename">
+        <div class="location">at line 110</div>
+        <code>            public            string
+    <strong>getFilename</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>the archive file name</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getComment">
+        <div class="location">at line 118</div>
+        <code>            public            string|bool
+    <strong>getComment</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string|bool</td>
+            <td>the comment of the archive</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setComment">
+        <div class="location">at line 126</div>
+        <code>            public            <a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a>|bool
+    <strong>setComment</strong>(string $comment)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$comment</td>
+                <td>the new archive comment</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a>|bool</td>
+            <td>the adapter instance on suceess else false</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_updateArchive">
+        <div class="location">at line 135</div>
+        <code>            public            <abbr title="Elibyy\General\$this">$this</abbr>
+    <strong>updateArchive</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="Elibyy\General\$this">$this</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_open">
+        <div class="location">at line 144</div>
+        <code>            public            void
+    <strong>open</strong>(string $file, int $flags = \ZipArchive::CREATE)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$file</td>
+                <td>the Archive filename</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$flags</td>
+                <td>the flags depend on the adapter</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>void</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_addFolder">
+        <div class="location">at line 152</div>
+        <code>            public            <a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a>
+    <strong>addFolder</strong>(string $path, string $parent = &#039;&#039;)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$path</td>
+                <td>the folder full path</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$parent</td>
+                <td>the parent path used for relative path in the archive</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_addFile">
+        <div class="location">at line 180</div>
+        <code>            public            bool
+    <strong>addFile</strong>(string $path, string $localName = null, int $start, null $length = null, bool $noUpdate = false)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$path</td>
+                <td>the file full path</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$localName</td>
+                <td>the file local name in the archive</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$start</td>
+                <td>the start position to start from when reading the file</td>
+            </tr>
+                    <tr>
+                <td>null</td>
+                <td>$length</td>
+                <td>the end position to stop when reading the file</td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$noUpdate</td>
+                <td>if set will not update the archive after adding the file</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>was the file added?</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_removeFileByObject">
+        <div class="location">at line 194</div>
+        <code>            public            bool
+    <strong>removeFileByObject</strong>(<a href="../../Elibyy/General/File.html"><abbr title="Elibyy\General\File">File</abbr></a> $file)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../Elibyy/General/File.html"><abbr title="Elibyy\General\File">File</abbr></a></td>
+                <td>$file</td>
+                <td>the File Object to remove</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>was the file removed?</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_removeFileByName">
+        <div class="location">at line 204</div>
+        <code>            public            bool
+    <strong>removeFileByName</strong>(string $name)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$name</td>
+                <td>the file name</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td>was the file removed?</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_addGlob">
+        <div class="location">at line 214</div>
+        <code>            public            array
+    <strong>addGlob</strong>(string $glob, int $flags = GLOB_BRACE, array $options = array())</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$glob</td>
+                <td>the glob pattern</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$flags</td>
+                <td>glob flags</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$options</td>
+                <td>An associative array of options. Available options are: <p> "add<em>path" </p> <p> Prefix to prepend when translating to the local path of the file within the archive. This is applied after any remove operations defined by the "remove</em>path" or "remove<em>all</em>path" options. </p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>the result of the glob</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_addPattern">
+        <div class="location">at line 224</div>
+        <code>            public            array
+    <strong>addPattern</strong>(string $pattern, string $directory, array $options = array())</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$pattern</td>
+                <td>the regular expression pattern</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$directory</td>
+                <td>the path of the directory</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$options</td>
+                <td>An associative array of options accepted by <b>ZipArchive::addGlob</b>. </p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>the result of the pattern</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_compress">
+        <div class="location">at line 240</div>
+        <code>            public            <a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a>
+    <strong>compress</strong>(string $format)</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$format</td>
+                <td>the format of the compression</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="../../Elibyy/General/Adapter.html"><abbr title="Elibyy\General\Adapter">Adapter</abbr></a></td>
+            <td>the resulting adapter</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

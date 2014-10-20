@@ -1,0 +1,16 @@
+var tree = [["Elibyy","Elibyy.html","",
+                [["Adapters","Elibyy\/Adapters.html","",
+                [["PharAdapter","Elibyy\/Adapters\/PharAdapter.html","",
+                [        ]],["TestAdapter","Elibyy\/Adapters\/TestAdapter.html"," < ZipAdapter",
+                [        ]],["ZipAdapter","Elibyy\/Adapters\/ZipAdapter.html","",
+                [        ]]        ]],["General","Elibyy\/General.html","",
+                [["Adapter","Elibyy\/General\/Adapter.html","",
+                [        ]],["File","Elibyy\/General\/File.html","",
+                [        ]]        ]],["Phar","Elibyy\/Phar.html","",
+                [["File","Elibyy\/Phar\/File.html","",
+                [        ]]        ]],["Zip","Elibyy\/Zip.html","",
+                [["File","Elibyy\/Zip\/File.html","",
+                [        ]]        ]],["Creator","Elibyy\/Creator.html"," < Reader",
+                [        ]],["Reader","Elibyy\/Reader.html","",
+                [        ]]        ]]        ]
+
