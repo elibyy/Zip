@@ -168,4 +168,4 @@ class File implements
     {
         return $this->adapter;
     }
-} 
+}

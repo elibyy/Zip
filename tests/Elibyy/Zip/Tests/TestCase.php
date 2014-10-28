@@ -40,6 +40,7 @@ class TestCase extends
 
     /**
      * deletes a folder recursively
+     *
      * @param string $path the folder to delete
      *
      * @since 1.0
@@ -69,10 +70,19 @@ class TestCase extends
     protected function _createFiles()
     {
         $filesPath = $this->path . 'files' . DS;
+        if (!file_exists($filesPath)) {
+            mkdir($filesPath, 0777, true);
+        }
         for ($i = 0; $i < 10; $i++) {
             $fileName = $filesPath . $i . '.txt';
             file_put_contents($fileName, rand() . rand());
         }
     }
+
+    protected function _deleteFiles()
+    {
+        $filesPath = $this->path . 'files' . DS;
+        $this->_deleteFolder($filesPath);
+        mkdir($filesPath);
+    }
 }
- 

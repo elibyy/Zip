@@ -112,11 +112,11 @@ interface Adapter
      * please note if $noUpdate is set to true you must run {@link Adapter#updateArchive()} manually,<br>
      * or your archive info might not be updated
      *
-     * @param  string $path      the file full path
-     * @param string  $localName the file local name in the archive
-     * @param int     $start     the start position to start from when reading the file
-     * @param null    $length    the end position to stop when reading the file
-     * @param bool    $noUpdate  if set will not update the archive after adding the file
+     * @param string $path      the file full path
+     * @param string $localName the file local name in the archive
+     * @param int    $start     the start position to start from when reading the file
+     * @param null   $length    the end position to stop when reading the file
+     * @param bool   $noUpdate  if set will not update the archive after adding the file
      *
      * @return bool was the file added?
      * @since 1.0
@@ -154,18 +154,18 @@ interface Adapter
     /**
      * adds files using
      *
-     * @param  string $glob    the glob pattern
-     * @param int     $flags   glob flags
-     * @param array   $options An associative array of options. Available options are:
-     *                         <p>
-     *                         "add_path"
-     *                         </p>
-     *                         <p>
-     *                         Prefix to prepend when translating to the local path of the file within
-     *                         the archive. This is applied after any remove operations defined by the
-     *                         "remove_path" or "remove_all_path"
-     *                         options.
-     *                         </p>
+     * @param string $glob    the glob pattern
+     * @param int    $flags   glob flags
+     * @param array  $options An associative array of options. Available options are:
+     *                        <p>
+     *                        "add_path"
+     *                        </p>
+     *                        <p>
+     *                        Prefix to prepend when translating to the local path of the file within
+     *                        the archive. This is applied after any remove operations defined by the
+     *                        "remove_path" or "remove_all_path"
+     *                        options.
+     *                        </p>
      *
      * @return array the result of the glob
      * @since 1.0

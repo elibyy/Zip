@@ -20,7 +20,7 @@ use Elibyy\Reader;
  * @author  elibyy <elibyy@eyurl.com>
  * @package Elibyy\Zip\Tests
  */
-class ReadingTest extends
+class ReaderTest extends
     TestCase
 {
 
@@ -48,21 +48,6 @@ class ReadingTest extends
     }
 
     /**
-     * testing TAR reading
-     *
-     * @since 1.0
-     */
-    public function testReaderTar()
-    {
-        $file = BP . '/archives/test.tar';
-        $reader = new Reader($file);
-        $files = $reader->getFiles();
-        $this->assertTrue(!empty($files));
-        $this->assertEquals(10, $reader->getFilesCount(), 'Files Count test');
-        $this->assertEquals($file, $reader->getFilename());
-    }
-
-    /**
      * testing GZ reading
      *
      * @since 1.0
@@ -73,6 +58,8 @@ class ReadingTest extends
         $reader = new Reader($file);
         $this->assertEquals(10, $reader->getFilesCount(), 'Files Count test');
         $this->assertEquals($file, $reader->getFilename());
+        $this->assertFalse($reader->getComment());
+        $this->assertInstanceOf('Elibyy\General\Adapter', $reader->setComment(''));
     }
 
     /**
@@ -86,6 +73,11 @@ class ReadingTest extends
         $reader = new Reader($file);
         $this->assertEquals(10, $reader->getFilesCount(), 'Files Count test');
         $this->assertEquals($file, $reader->getFilename());
+        $testFile = $reader->getFiles()[1];
+        $this->assertEquals(true, $reader->removeFileByName('0.txt'));
+        $this->assertEquals(true, $reader->removeFileByObject($testFile));
+        $this->assertFalse($reader->addGlob(''));
+        $this->assertFalse($reader->addPattern('', ''));
     }
 
     /**
@@ -171,7 +163,7 @@ class ReadingTest extends
     }
 
     /**
-     * testing compressaion changing
+     * testing compression changing
      *
      * @since 1.0
      */
@@ -215,4 +207,3 @@ class ReadingTest extends
         $this->assertTrue(!empty($patternRes));
     }
 }
- 

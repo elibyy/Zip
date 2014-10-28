@@ -101,4 +101,4 @@ interface File
      * @since 1.0
      */
     public function getAdapter();
-} 
+}

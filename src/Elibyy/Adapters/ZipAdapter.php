@@ -73,6 +73,7 @@ class ZipAdapter implements
                 $files[$file->getIndex()] = $file;
             }
         }
+
         return $files;
     }
 
@@ -101,6 +102,7 @@ class ZipAdapter implements
             $destination = dirname($this->getFilename());
             (!file_exists($destination)) ? mkdir($destination) : null;
         }
+
         return $this->getArchive()->extractTo($destination, $entries);
     }
 
@@ -126,6 +128,7 @@ class ZipAdapter implements
     public function setComment($comment)
     {
         $this->getArchive()->setArchiveComment($comment);
+
         return $this->updateArchive();
     }
 
@@ -135,6 +138,7 @@ class ZipAdapter implements
     public function updateArchive()
     {
         $this->open($this->getFilename());
+
         return $this;
     }
 
@@ -171,6 +175,7 @@ class ZipAdapter implements
                 $dir->next();
             }
         }
+
         return $this->updateArchive();
     }
 
@@ -185,6 +190,7 @@ class ZipAdapter implements
         if (!$noUpdate) {
             $this->updateArchive();
         }
+
         return $results;
     }
 
@@ -195,6 +201,7 @@ class ZipAdapter implements
     {
         $results = $this->getArchive()->deleteIndex($file->getIndex());
         $this->updateArchive();
+
         return $results;
     }
 
@@ -205,6 +212,7 @@ class ZipAdapter implements
     {
         $results = $this->getArchive()->deleteName($name);
         $this->updateArchive();
+
         return $results;
     }
 
@@ -215,6 +223,7 @@ class ZipAdapter implements
     {
         $results = $this->getArchive()->addGlob($glob, $flags, $options);
         $this->updateArchive();
+
         return $results;
     }
 
@@ -231,6 +240,7 @@ class ZipAdapter implements
         }
         $results = $this->getArchive()->addPattern($pattern, $directory, $options);
         $this->updateArchive();
+
         return $results;
     }
 

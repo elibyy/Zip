@@ -34,4 +34,4 @@ class Creator extends
         $this->adapter = $this->_getAdapter($file);
         $this->adapter->open($file);
     }
-} 
+}

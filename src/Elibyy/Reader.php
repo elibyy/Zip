@@ -57,7 +57,7 @@ class Reader
      *
      * @param string $file the file to get the adapter for
      *
-     * @throws \RuntimeException  if no adapter found or adapter folder doesn't exist
+     * @throws \RuntimeException if no adapter found or adapter folder doesn't exist
      * @since 1.0
      * @return Adapter
      */
@@ -99,7 +99,8 @@ class Reader
         if (count($supports) == 1) {
             $class = array_shift($supports);
             $class = $class->getName();
-            return new $class;
+
+            return new $class();
         }
         throw new \RuntimeException(sprintf("No Adapter found for %s", $file));
     }
@@ -265,18 +266,18 @@ class Reader
     /**
      * adds files using
      *
-     * @param  string $glob    the glob pattern
-     * @param int     $flags   glob flags
-     * @param array   $options An associative array of options. Available options are:
-     *                         <p>
-     *                         "add_path"
-     *                         </p>
-     *                         <p>
-     *                         Prefix to prepend when translating to the local path of the file within
-     *                         the archive. This is applied after any remove operations defined by the
-     *                         "remove_path" or "remove_all_path"
-     *                         options.
-     *                         </p>
+     * @param string $glob    the glob pattern
+     * @param int    $flags   glob flags
+     * @param array  $options An associative array of options. Available options are:
+     *                        <p>
+     *                        "add_path"
+     *                        </p>
+     *                        <p>
+     *                        Prefix to prepend when translating to the local path of the file within
+     *                        the archive. This is applied after any remove operations defined by the
+     *                        "remove_path" or "remove_all_path"
+     *                        options.
+     *                        </p>
      *
      * @return bool was glob added?
      * @since 1.0

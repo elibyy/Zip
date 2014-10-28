@@ -32,10 +32,6 @@ class CreatorTest extends
     protected function setUp()
     {
         parent::setUp();
-        if (!file_exists($this->path)) {
-            mkdir($this->path);
-            mkdir($this->path . DS . 'files');
-        }
         $this->_createFiles();
     }
 
@@ -47,32 +43,6 @@ class CreatorTest extends
     public function testZipCreate()
     {
         $file = $this->path . 'test.zip';
-        $filesPath = $this->path . 'files' . DS;
-        $creator = new Creator($file);
-        $dir = new \RecursiveDirectoryIterator($filesPath);
-        while ($dir->valid()) {
-            $item = $dir->current();
-            if ($item->isFile()) {
-                $add = $creator->addFile($item->getRealPath(), $item->getFilename());
-                $this->assertTrue($add, sprintf('the file %s was not added to the tar file', $item->getFilename()));
-            }
-            $dir->next();
-        }
-        $this->assertFileExists($file);
-        $this->assertEquals(10, $creator->getFilesCount());
-    }
-
-    /**
-     * test create TAR file
-     *
-     * @since 1.0
-     */
-    public function testTarCreate()
-    {
-        /**
-         * @var \SplFileInfo $item
-         */
-        $file = $this->path . 'test.tar';
         $filesPath = $this->path . 'files' . DS;
         $creator = new Creator($file);
         $dir = new \RecursiveDirectoryIterator($filesPath);
@@ -145,7 +115,7 @@ class CreatorTest extends
      *
      * @since 1.0
      */
-    public function testAddFolder()
+    public function testAddFoZiplder()
     {
         $file = $this->path . 'test-folder.zip';
         $filesPath = $this->path . 'files' . DS;
@@ -154,5 +124,19 @@ class CreatorTest extends
         $this->assertFileExists($file);
         $this->assertEquals(10, $creator->getFilesCount());
     }
+
+    /**
+     * test add a folder to the archive
+     *
+     * @since 1.0
+     */
+    public function testAddFolderTar()
+    {
+        $file = $this->path . 'test-folder.tar';
+        $filesPath = $this->path . 'files' . DS;
+        $creator = new Creator($file);
+        $creator->addFolder($filesPath);
+        $this->assertFileExists($file);
+        $this->assertEquals(10, $creator->getFilesCount());
+    }
 }
- 

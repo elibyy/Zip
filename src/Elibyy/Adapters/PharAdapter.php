@@ -84,6 +84,7 @@ class PharAdapter implements
             $this->getArchive()->next();
         }
         $this->getArchive()->rewind();
+
         return $files;
     }
 
@@ -104,6 +105,7 @@ class PharAdapter implements
             $destination = dirname($this->getFilename());
             (!file_exists($destination)) ? mkdir($destination) : null;
         }
+
         return $this->getArchive()->extractTo($destination, $entries);
     }
 
@@ -145,6 +147,7 @@ class PharAdapter implements
     public function updateArchive()
     {
         $this->open($this->getFilename());
+
         return $this;
     }
 
@@ -182,6 +185,7 @@ class PharAdapter implements
                 $dir->next();
             }
         }
+
         return $this->updateArchive();
     }
 
@@ -192,14 +196,15 @@ class PharAdapter implements
     {
         $results = true;
         $localName = ($localName === null) ? basename($path) : $localName;
-        try{
+        try {
             $this->getArchive()->addFile($path, $localName);
-        } catch(\Exception $e){
+        } catch (\Exception $e) {
             $results = false;
         }
         if (!$noUpdate) {
             $this->updateArchive();
         }
+
         return $results;
     }
 
@@ -218,6 +223,7 @@ class PharAdapter implements
     {
         $results = $this->getArchive()->delete($name);
         $this->updateArchive();
+
         return $results;
     }
 

@@ -28,6 +28,15 @@ class File implements
 
     protected $_adapter;
 
+    protected static $comparisonTypes = array(
+        'phar' => 'PHP Archive',
+        'tar' => 'TAR',
+        'tar.gz' => 'TAR GZIP',
+        'tar.bz2' => 'TAR BZIP2',
+        'bz2' => 'BZIP2',
+        'gz' => 'GZIP',
+    );
+
     /**
      * @param \PharFileInfo $file
      * @param Adapter       $adapter
@@ -110,7 +119,8 @@ class File implements
      */
     public function getStringCompressionMethod()
     {
-        return false;
+        $ext = pathinfo($this->getAdapter()->getFilename(), PATHINFO_EXTENSION);
+        return self::$comparisonTypes[$ext];
     }
 
     /**

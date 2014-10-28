@@ -10,7 +10,9 @@
  */
 namespace Elibyy\Zip\Tests;
 
+use Elibyy\Creator;
 use Elibyy\Reader;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
  * Class AdapterTest
@@ -51,11 +53,12 @@ class AdapterTest extends
         $file = $this->path . DS . 'test.zip';
         $reader = new Reader($file);
         $this->assertInstanceOf('Elibyy\General\Adapter', $reader->getAdapter());
+        $this->assertInstanceOf('Elibyy\Adapters\ZipAdapter', $reader->compress(null));
     }
 
     /**
      * test a file with no adapter available
-     * that will throw an excception
+     * that will throw an exception
      *
      * @since 1.0
      */
@@ -69,14 +72,65 @@ class AdapterTest extends
         }
     }
 
+    public function testNoAdapters()
+    {
+        $ref = new \ReflectionClass('Elibyy\Adapters\TestAdapter');
+        $adaptersFolder = dirname($ref->getFileName());
+        $newName = str_replace('Adapters', 'Test', $adaptersFolder);
+        rename($adaptersFolder, $newName);
+        $file = $this->path . 'test.zip';
+        try{
+            $reader = new Reader($file);
+        } catch(\Exception $e){
+            $msg = sprintf('the adapters folder is missing should be in the path %s', $adaptersFolder);
+            $this->assertEquals($msg,
+                $e->getMessage());
+        }
+        rename($newName, $adaptersFolder);
+    }
+
+    public function testRecursiveDirZip()
+    {
+        $file = $this->path . 'testRecursive.zip';
+        $creator = new Creator($file);
+        $adapter = $creator->addFolder(BP . DS . 'src');
+        $this->assertInstanceOf('Elibyy\General\Adapter', $adapter);
+        $this->assertEquals(9, $creator->getFilesCount());
+    }
+
+    public function testRecursiveDirTar()
+    {
+        $file = $this->path . 'testRecursive.tar';
+        $creator = new Creator($file);
+        $adapter = $creator->addFolder(BP . DS . 'src');
+        $this->assertInstanceOf('Elibyy\General\Adapter', $adapter);
+        $this->assertEquals(9, $creator->getFilesCount());
+    }
+
+    public function testPharCreate()
+    {
+        $file = $this->path . 'test.tar';
+        $this->_createFiles();
+        $creator = new Creator($file);
+        $creator->addFolder($this->path . 'files');
+    }
+
+    public function testUnzipPhar()
+    {
+        $this->_deleteFiles();
+        $file = $this->path . 'test.tar';
+        $reader = new Reader($file);
+        $reader->unzip();
+        $reader->unzip($this->path . 'test');
+    }
+
     /**
      * cleans tests files created
      *
      * @since 1.0
      */
-    public static function  tearDownAfterClass()
+    public static function tearDownAfterClass()
     {
         self::_deleteFolder(BP . DS . 'archives' . DS);
     }
 }
- 
