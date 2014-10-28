@@ -26,7 +26,6 @@ class FileTests extends
             $this->assertInternalType('string', $file->getModifiedAt('d/m/y'));
             $this->assertInstanceOf('Elibyy\Adapters\ZipAdapter', $file->getAdapter());
             $this->assertInternalType('int', $file->getSize());
-            $this->assertLessThan(11, $file->getSize());
             $this->assertInternalType('int', $file->getCompressedSize());
             $file->setComment('test');
             $this->assertEquals('test', $file->getComment());
@@ -49,7 +48,6 @@ class FileTests extends
             $this->assertInternalType('string', $file->getModifiedAt('d/m/y'));
             $this->assertInstanceOf('Elibyy\Adapters\PharAdapter', $file->getAdapter());
             $this->assertInternalType('int', $file->getSize());
-            $this->assertLessThan(11, $file->getSize());
             $this->assertInternalType('int', $file->getCompressedSize());
             $file->setComment('test');
             $this->assertEquals(false, $file->getComment());
