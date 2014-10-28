@@ -145,7 +145,7 @@ you have `PHPUnit`_ installed, and, at the root of The library execute it :
 
 About
 -----
-
+this library was built by `elibyy`_
 
 License
 -------
@@ -161,3 +161,4 @@ the LICENSE is provided in the archive
 .. _PHPUnit: http://www.phpunit.de/manual/current/en/
 .. _BZIP2: http://www.bzip.org/
 .. _GZ: http://www.gzip.org/
+.. _elibyy: http://eyurl.com

@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/elibyy/Zip.svg?branch=master)](https://travis-ci.org/elibyy/Zip)
-
+[![Docs](https://readthedocs.org/projects/zip/badge/?version=latest)](http://zip.rtfd.org/)
 #Elibyy Zip
 A Object-Oriented PHP library to manipulate archives
 
