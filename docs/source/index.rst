@@ -136,8 +136,8 @@ GitHub, we will be glad to merge your code.
 Run tests
 ---------
 
-Zippy relies on `PHPUnit`_ for unit tests. To run tests on your system, ensure
-you have `PHPUnit`_ installed, and, at the root of Zippy execute it :
+the Library relies on `PHPUnit`_ for unit tests. To run tests on your system, ensure
+you have `PHPUnit`_ installed, and, at the root of The library execute it :
 
 .. code-block:: bash
 
