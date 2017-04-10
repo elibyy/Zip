@@ -6,7 +6,8 @@ before_script:
 php:
   - 5.4
   - 5.5
+  - 7.0
 
 script:
-  - phpunit -v
-  - phpunit -v -c phpunit.xml
+  - vendor/bin/phpunit -v
+  - vendor/bin/phpunit -v -c phpunit.xml
