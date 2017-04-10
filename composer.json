@@ -1,0 +1,38 @@
+{
+    "name"             : "elibyy/zip",
+    "version"          : "1.0",
+    "type"             : "library",
+    "description"      : "a simple and powerful zip manipulation library",
+    "homepage"         : "https://github.com/elibyy/zip",
+    "keywords"         : [
+        "zip",
+        "archive",
+        "unzip",
+        "zipArchive"
+    ],
+    "authors"          : [
+        {
+            "name"    : "elibyy",
+            "email"   : "elibyy@gmail.com",
+            "role"    : "developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require"          : {
+        "php": ">=5.4.0",
+        "ext-zip"        : "*"
+    },
+    "require-dev"      : {
+        "ext-zip"        : "*",
+        "phpunit/phpunit": "~3.7"
+    },
+    "autoload"         : {
+        "psr-0": {"Elibyy": "src"}
+    },
+    "autoload-dev"     : {
+        "psr-0": {"Elibyy\\Zip\\Tests": "tests/"}
+    },
+    "suggest"          : {
+        "ext-zip": "Some PHP versions do not include it by default"
+    }
+}
