@@ -1,20 +1,15 @@
 {
-    "name"             : "elibyy/zip",
+    "name"             : "ticketpark/elibyy-zip",
     "version"          : "1.0",
     "type"             : "library",
     "description"      : "a simple and powerful zip manipulation library",
-    "homepage"         : "https://github.com/elibyy/Zip",
+    "homepage"         : "https://github.com/ticketpark/elibyy-zip",
     "keywords"         : [
         "zip",
         "archive",
         "unzip",
         "zipArchive"
     ],
-    "support"          : {
-        "email" : "elibyy@eyurl.com",
-        "source": "https://github.com/elibyy/Zip",
-        "issues": "https://github.com/elibyy/Zip/issues"
-    },
     "authors"          : [
         {
             "name"    : "elibyy",
@@ -39,6 +34,6 @@
         "psr-0": {"Elibyy\\Zip\\Tests": "tests/"}
     },
     "suggest"          : {
-        "ext-zip": "Some PHP versions does not include it by default"
+        "ext-zip": "Some PHP versions do not include it by default"
     }
 }
